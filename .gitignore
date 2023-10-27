@@ -40,3 +40,42 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Arquivos de configuração do IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Dependências
+/node_modules/
+/package-lock.json
+/yarn.lock
+
+# Arquivos gerados pela compilação e build
+/dist/
+/*.js
+/*.js.map
+/*.css
+/*.css.map
+/index.html
+/manifest.webmanifest
+
+# Arquivos de configuração do TypeScript
+/tsconfig.json
+/tsconfig.app.json
+/tsconfig.spec.json
+
+# Cache do Angular
+/.angular/cache/
+/.angular/assets/
+
+# Diretório de testes
+/e2e/
+
+# Arquivos temporários
+*.log
+*.swp
+
+# Visual Studio Code
+.vscode/
