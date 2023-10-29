@@ -1,1 +1,21 @@
-<p>carousel works!</p>
+<div class="carousel">
+  <mat-card>
+    <ng-container *ngFor='let movie of movies; let  i=index'>
+      <mat-card-header *ngIf='i === currentMovies'>
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-subtitle>{{movie.year}}</mat-card-subtitle>
+      </mat-card-header>
+      <img *ngIf='i === currentMovies' class="slide" [src]='movie.image' />
+
+      <mat-card-content *ngIf='i === currentMovies'>
+        <p>{{movie.crew}}</p>
+        <p><b>{{movie.imDbRating}}</b></p>
+      </mat-card-content>
+    </ng-container>
+    <button class='control prev' mat-mini-fab aria-label="Previous"
+      (click)="onPreviousClick()"><mat-icon>arrow_back</mat-icon></button>
+
+    <button class='control next' mat-mini-fab aria-label="Next"
+      (click)="onNextClick()"><mat-icon>arrow_forward</mat-icon></button>
+  </mat-card>
+</div>
