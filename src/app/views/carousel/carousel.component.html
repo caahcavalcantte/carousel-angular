@@ -1,13 +1,13 @@
 <div class="carousel">
   <mat-card>
     <ng-container *ngFor='let movie of movies; let  i=index'>
-      <mat-card-header *ngIf='i === currentMovies'>
+      <mat-card-header *ngIf='i === currentMovies' [@slideAnimation]='animationType'>
         <mat-card-title>{{movie.title}}</mat-card-title>
         <mat-card-subtitle>{{movie.year}}</mat-card-subtitle>
       </mat-card-header>
-      <img *ngIf='i === currentMovies' class="slide" [src]='movie.image' />
+      <img *ngIf='i === currentMovies' class="slide" [src]='movie.image' [@slideAnimation]='animationType' />
 
-      <mat-card-content *ngIf='i === currentMovies'>
+      <mat-card-content *ngIf='i === currentMovies' >
         <p>{{movie.crew}}</p>
         <p><b>{{movie.imDbRating}}</b></p>
       </mat-card-content>

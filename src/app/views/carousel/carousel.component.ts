@@ -1,14 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ImdbService } from 'src/app/services/imdb.service';
+import {CarrouselAnimation, fadeIn, fadeOut} from './carousel.animations';
+import {trigger, transition, useAnimation} from '@angular/animations'
 
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
+  animations:[
+    trigger('slideAnimation',[
+      transition('void => fade',[
+        useAnimation(fadeIn, {params: {time: '1s'}})
+      ]),
+      transition('fade => void', [
+        useAnimation(fadeOut, {params: {time: '1s'}})
+      ])
+    ])
+  ]
 })
 export class CarouselComponent {
 
+  @Input() animationType = CarrouselAnimation.Fade;
+  
   public movies: any = [];
   currentMovies = 0;
 
